@@ -8,6 +8,9 @@ import PetList from './PetList';
 function App() {
   return (
     <div className="App">
+      <Header />
+      <NewPetForm />
+      <PetList />
     </div>
   );
 }
