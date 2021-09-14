@@ -16,10 +16,38 @@ function App() {
     .then(petArray => setPets(petArray))
   },[]);
 
+  const handleChange = (e) => {
+    if(e.target.name === 'small')
+    {setNewPet({...newPetInput, 'size': 'small'})}
+    else if(e.target.name === 'medium')
+    {setNewPet({...newPetInput, 'size': 'medium'})}
+    else if(e.target.name === 'large')
+    {setNewPet({...newPetInput, 'size': 'large'})}
+    else if(e.target.name === 'male')
+    {setNewPet({...newPetInput, 'sex': 'male'})}
+    else if(e.target.name === 'female')
+    {setNewPet({...newPetInput, 'sex': 'female'})}
+  };
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const newAnimal = setNewPet({...newPetInput})
+    // fetch(`http://localhost:3000/pets`, {
+    //   method: 'POST',
+    //   headers: {'Content-Type': 'application/json'},
+    //   body: JSON.stringify(newPetInput)
+    // })
+    console.log(newAnimal)
+  }
+
   return (
     <div className="App">
       <Header />
-      <NewPetForm newPetInput={newPetInput} />
+      <NewPetForm newPetInput={newPetInput} 
+                  setNewPet={setNewPet} 
+                  handleChange={handleChange} 
+                  handleSubmit-={handleSubmit} 
+      />
       <PetList pets={pets} />
     </div>
   );
