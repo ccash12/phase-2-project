@@ -9,12 +9,13 @@ function App() {
   const [pets, setPets] = useState([])
   const [newPetInput, setNewPet] = useState(
   {name: '', age: '', animal: '', image: '', size: '', sex: '', description: '' });
+  const [searchPet, setSearchPet] = useState('');
 
   useEffect(() => {
     fetch(`http://localhost:3000/pets`)
     .then(resp => resp.json())
     .then(petArray => setPets(petArray))
-  },[]);
+  },[searchPet]);
 
   const handleChange = (e) => {
     if(e.target.name === 'small')
@@ -38,17 +39,26 @@ function App() {
     //   body: JSON.stringify(newPetInput)
     // })
     console.log(newAnimal)
+  };
+
+  function handleSearch(e) {
+    setSearchPet(e.target.value);
   }
+
+  const SearchPetArray = pets.filter(pet => {
+    const type = pet.animal.toLowerCase();
+    return type.includes(searchPet.toLowerCase())
+  })
 
   return (
     <div className="App">
-      <Header />
+      <Header searchPet={searchPet} handleSearch={handleSearch} />
       <NewPetForm newPetInput={newPetInput} 
                   setNewPet={setNewPet} 
                   handleChange={handleChange} 
                   handleSubmit-={handleSubmit} 
       />
-      <PetList pets={pets} />
+      <PetList pets={SearchPetArray} />
     </div>
   );
 }

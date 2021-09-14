@@ -1,6 +1,6 @@
 import SearchPets from "./SearchPets";
 
-function Header() {
+function Header({ searchPet, handleSearch }) {
     return (
         <div>
             <h1 
@@ -12,7 +12,7 @@ function Header() {
             justifyContent: "center"
             }}>Pet Adoption</h1>
         
-            <SearchPets />
+            <SearchPets searchPet={searchPet} handleSearch={handleSearch} />
         </div>
     )
 }
