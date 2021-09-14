@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {console.log('hi')},[]);
 
   return (
-    <div className="App">
+    <div className="App" >
       <Header />
       <NewPetForm newPetInput={newPetInput} />
       <PetList pets={pets} />
