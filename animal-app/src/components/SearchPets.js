@@ -1,7 +1,13 @@
 function SearchPets() {
     return (
-        <div>
-
+        <div className='searchbar'> 
+            <label htmlFor="search">Search Pets:</label>
+            <input 
+                type="text"
+                id="search"
+                placeholder="Search Pets"
+                onChange={(e) => console.log("Searching...")}
+            />
         </div>
     )
 }

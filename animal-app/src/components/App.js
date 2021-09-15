@@ -43,12 +43,19 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <NewPetForm newPetInput={newPetInput} 
+
+      <Switch>
+        <Route path="/newpet">
+          <NewPetForm newPetInput={newPetInput} 
                   setNewPet={setNewPet} 
                   handleChange={handleChange} 
                   handleSubmit-={handleSubmit} 
-      />
-      <PetList pets={pets} />
+          />
+        </Route>
+        <Route path="/petlist">
+          <PetList pets={pets} />
+        </Route>
+      </Switch>
     </div>
   );
 }
