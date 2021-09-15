@@ -1,64 +1,67 @@
 import React, { useState, useEffect } from 'react';
-import './App.css'
+import './App.css';
 
 import Header from './Header';
 import NewPetForm from './NewPetForm';
 import PetList from './PetList';
+import MyPets from './MyPets';
 
 function App() {
-  const [pets, setPets] = useState([])
-  const [newPetInput, setNewPet] = useState(
-  {name: '', age: '', animal: '', image: '', size: '', sex: '', description: '' });
+  const [pets, setPets] = useState([]);
   const [searchPet, setSearchPet] = useState('');
+  const [newPetInput, setNewPet] = useState({name: '', 
+                                             age: '', 
+                                             animal: '', 
+                                             image: '', 
+                                             size: '', 
+                                             sex: '', 
+                                             description: '' });
+  
 
   useEffect(() => {
     fetch(`http://localhost:3000/pets`)
     .then(resp => resp.json())
     .then(petArray => setPets(petArray))
-  },[searchPet]);
-
-  const handleChange = (e) => {
-    if(e.target.name === 'small')
-    {setNewPet({...newPetInput, 'size': 'small'})}
-    else if(e.target.name === 'medium')
-    {setNewPet({...newPetInput, 'size': 'medium'})}
-    else if(e.target.name === 'large')
-    {setNewPet({...newPetInput, 'size': 'large'})}
-    else if(e.target.name === 'male')
-    {setNewPet({...newPetInput, 'sex': 'male'})}
-    else if(e.target.name === 'female')
-    {setNewPet({...newPetInput, 'sex': 'female'})}
-  };
+  },[]);
 
   function handleSubmit(e) {
     e.preventDefault();
-    const newAnimal = setNewPet({...newPetInput})
-    // fetch(`http://localhost:3000/pets`, {
-    //   method: 'POST',
-    //   headers: {'Content-Type': 'application/json'},
-    //   body: JSON.stringify(newPetInput)
-    // })
-    console.log(newAnimal)
+    setNewPet(newPetInput)
+    fetch(`http://localhost:3000/pets`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(newPetInput)})
+    .then(resp => resp.json())
+    .then(setPets([...pets, newPetInput]))
+    console.log(newPetInput)
   };
 
   function handleSearch(e) {
     setSearchPet(e.target.value);
   }
 
-  const SearchPetArray = pets.filter(pet => {
+  const petsCopy = [...pets];
+  const SearchPetArray = petsCopy.filter(pet => {
     const type = pet.animal.toLowerCase();
     return type.includes(searchPet.toLowerCase())
-  })
+  });
 
   return (
     <div className="App">
-      <Header searchPet={searchPet} handleSearch={handleSearch} />
-      <NewPetForm newPetInput={newPetInput} 
-                  setNewPet={setNewPet} 
-                  handleChange={handleChange} 
-                  handleSubmit-={handleSubmit} 
+      <Header searchPet={searchPet} 
+              handleSearch={handleSearch} 
       />
-      <PetList pets={SearchPetArray} />
+
+      {/* /pets/new */}
+      <NewPetForm newPetInput={newPetInput} 
+                  setNewPet={setNewPet}  
+                  handleSubmit={handleSubmit} 
+      />
+      {/* /pets/mine */}
+      <MyPets />
+      {/* /pets */}
+      <PetList pets={SearchPetArray} 
+      />
     </div>
   );
 }

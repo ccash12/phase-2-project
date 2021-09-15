@@ -1,9 +1,23 @@
-function NewPetForm({ newPetInput, setNewPet, handleChange, handleSubmit }) {
+import { useState } from 'react';
+
+function NewPetForm({ newPetInput, setNewPet, handleSubmit }) {
+    const [sizeChecked, setSizeChecked] = useState(false);
+    const [sexChecked, setSexChecked] = useState(false);
     const {name, age, animal, image, description} = newPetInput;
+
+    function handleChecksSize(e){
+       console.log(e.target.value)
+       setSizeChecked(e.target.value)
+       setNewPet({...newPetInput, size: e.target.value})
+    };
+
+    function handleChecksSex(e){
+       setSexChecked(e.target.value)
+       setNewPet({...newPetInput, sex: e.target.value})
+    };
 
     return (
         <div id='newAnimalForm'>
-               {/* form needs onSubmit, inputs need onChange */}
             <form onSubmit={e => handleSubmit(e)}>
               <input type='text'
                      placeholder='Name'
@@ -36,20 +50,47 @@ function NewPetForm({ newPetInput, setNewPet, handleChange, handleSubmit }) {
                      value={description}
                      onChange={e => setNewPet({...newPetInput, [e.target.name]: e.target.value})} /><br />
               <div id='size'> Size: <br />
-                     <input type="checkbox" id="small" name="small" value="small"
-                     onChange={(e) => handleChange(e)} />
-                     <label for="small"> Small</label><br />
-                     <input type="checkbox" id="medium" name="medium" value="medium" onChange={(e) => handleChange(e)}/>
-                     <label for="medium"> Medium</label><br />
-                     <input type="checkbox" id="large" name="large" value="large"
-                     onChange={(e) => handleChange(e)}/>
-                     <label for="large"> Large</label>
+                     <input checked={sizeChecked === 'small'} 
+                            type="checkbox" 
+                            id="small" 
+                            name="small" 
+                            value="small"
+                            onChange={(e) => handleChecksSize(e)}
+                     />
+                     <label htmlFor="small"> Small</label><br />
+                     <input checked={sizeChecked === 'medium'} 
+                            type="checkbox" 
+                            id="medium" 
+                            name="medium" 
+                            value="medium" 
+                            onChange={(e) => handleChecksSize(e)}
+                     />
+                     <label htmlFor="medium"> Medium</label><br />
+                     <input checked={sizeChecked === 'large'} 
+                            type="checkbox" 
+                            id="large" 
+                            name="large" 
+                            value="large"
+                            onChange={(e) => handleChecksSize(e)}
+                     />
+                     <label htmlFor="large"> Large</label>
               </div>
               <div id='sex'> Sex: <br />
-                     <input type="checkbox" id="male" name="male" value="male" onChange={(e) => handleChange(e)}/>
-                     <label for="male"> Male</label><br />
-                     <input type="checkbox" id="female" name="female" value="female" onChange={(e) => handleChange(e)}/>
-                     <label for="female"> Female</label><br />
+                     <input checked={sexChecked === 'male'} 
+                            type="checkbox" id="male" 
+                            name="male" 
+                            value="male" 
+                            onChange={(e) => handleChecksSex(e)}
+                     />
+                     <label htmlFor="male"> Male</label><br />
+                     <input checked={sexChecked === 'female'} 
+                            type="checkbox" 
+                            id="female" 
+                            name="female" 
+                            value="female" 
+                            onChange={(e) => handleChecksSex(e)}
+                     />
+                     <label htmlFor="female"> Female</label><br />
               </div>
               <button>Submit</button>
             </form>
