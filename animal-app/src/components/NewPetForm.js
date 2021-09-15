@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 function NewPetForm({ newPetInput, setNewPet, handleSubmit }) {
     const [sizeChecked, setSizeChecked] = useState(false);

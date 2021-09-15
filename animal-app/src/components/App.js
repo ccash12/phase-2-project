@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
+import { Route, Switch } from 'react-router-dom';
+
 import Header from './Header';
 import NewPetForm from './NewPetForm';
 import PetList from './PetList';
 import MyPets from './MyPets';
+import PetDetails from './PetDetails';
 
 function App() {
   const [pets, setPets] = useState([]);
@@ -51,17 +54,20 @@ function App() {
       <Header searchPet={searchPet} 
               handleSearch={handleSearch} 
       />
-
-      {/* /pets/new */}
-      <NewPetForm newPetInput={newPetInput} 
-                  setNewPet={setNewPet}  
-                  handleSubmit={handleSubmit} 
-      />
-      {/* /pets/mine */}
-      <MyPets />
-      {/* /pets */}
-      <PetList pets={SearchPetArray} 
-      />
+      <Switch>
+        <Route path='/pets/:id' component={PetDetails} />
+        <Route path='/pets/new'>
+          <NewPetForm newPetInput={newPetInput} 
+                      setNewPet={setNewPet}  
+                      handleSubmit={handleSubmit} 
+          />
+        </Route>
+        <Route path='/pets/mine' component={MyPets} />
+        <Route path='/pets'>
+          <PetList pets={SearchPetArray} 
+          />
+        </Route>
+      </Switch>
     </div>
   );
 }
