@@ -16,12 +16,11 @@
 }
 
 .app {
-  background-image: url(https://www.publicdomainpictures.net/pictures/40000/velka/paw-prints-background.jpg)
+  background-image: url(https://cdn5.vectorstock.com/i/1000x1000/29/14/paws-background-paw-blue-pattern-vector-21602914.jpg)
 }
 
 .header {
-    color: white;
-    background: blue;
+    color: black;
     text-align: center;
     font-size: 50pt;
     font-family:monospace;
@@ -30,14 +29,30 @@
 }
 
 .searchbar {
-  position: absolute;
   top: 355px;
   left: 575px;
-  width: 1000px;
+  width: 2000px;
+  font-size: 20pt;
+}
+
+.form-box{
+  padding: 2rem 1rem;
+  margin: 2rem 0;
+  background-color: rgb(97, 205, 238);
 }
 
 .form-box {
-    
+  display: flex;
+  justify-content: center;
+}
+
+.form-box {
+  margin-right: 2rem;
+  flex: 1;
+}
+
+.form-box {
+  width: 150px;
 }
 
 .petcard {
@@ -56,4 +71,18 @@
   height: auto;
 }
 
+input {
+  padding: 0.25rem;
+  border: none;
+  font-family: inherit;
+  font-size: 1.2em;
+  border-bottom: 2px solid gray;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 2px solid var(--green);
+}
 

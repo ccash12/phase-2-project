@@ -9,13 +9,8 @@ import MyPets from './MyPets';
 function App() {
   const [pets, setPets] = useState([]);
   const [searchPet, setSearchPet] = useState('');
-  const [newPetInput, setNewPet] = useState({name: '', 
-                                             age: '', 
-                                             animal: '', 
-                                             image: '', 
-                                             size: '', 
-                                             sex: '', 
-                                             description: '' });
+  const [newPetInput, setNewPet] = useState(
+    {name: '', age: '', animal: '', image: '', size: '', sex: '', description: '' });
   
 
   useEffect(() => {
