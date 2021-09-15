@@ -1,4 +1,4 @@
-function SearchPets({ searchPet, handleSearch }) {
+function SearchPets() {
     return (
         <div className='searchbar'> 
             <label htmlFor="search">Search Pet Type:</label>
@@ -6,8 +6,7 @@ function SearchPets({ searchPet, handleSearch }) {
                 type="text"
                 id="search"
                 placeholder="Search Pets"
-                value={searchPet}
-                onChange={(e) => handleSearch(e)}
+                onChange={(e) => console.log("Searching...")}
             />
         </div>
     )
