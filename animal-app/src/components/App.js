@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '/Users/sillysadsoy/Development/Code/Module2/phase-2-project/animal-app/src/App.css'
+import './App.css'
 
 import Header from './Header';
 import NewPetForm from './NewPetForm';
