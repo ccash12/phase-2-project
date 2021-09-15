@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '/Users/sillysadsoy/Development/Code/Module2/phase-2-project/animal-app/src/App.css'
+import '../App.css'
 
 import Header from './Header';
 import NewPetForm from './NewPetForm';
@@ -43,19 +43,12 @@ function App() {
   return (
     <div className="App">
       <Header />
-
-      <Switch>
-        <Route path="/newpet">
-          <NewPetForm newPetInput={newPetInput} 
+      <NewPetForm newPetInput={newPetInput} 
                   setNewPet={setNewPet} 
                   handleChange={handleChange} 
                   handleSubmit-={handleSubmit} 
-          />
-        </Route>
-        <Route path="/petlist">
-          <PetList pets={pets} />
-        </Route>
-      </Switch>
+      />
+      <PetList pets={pets} />
     </div>
   );
 }
