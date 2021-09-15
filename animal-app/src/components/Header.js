@@ -4,7 +4,7 @@ import SearchPets from "./SearchPets";
 function Header({ searchPet, handleSearch }) {
     return (
         <div>
-            <h1 class="header">Pet Adoption</h1>
+            <h1 className="header">Pet Adoption</h1>
             <SearchPets searchPet={searchPet} handleSearch={handleSearch} />
             {/* <img class="logo" src={Logo} alt="logo"/> */}
             

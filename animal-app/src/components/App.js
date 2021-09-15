@@ -50,7 +50,7 @@ function App() {
               handleSearch={handleSearch} 
       />
       <Switch>
-        <Route path='/pets/:id' component={PetDetails} />
+        {/* <Route path='/pets/:id' component={PetDetails} /> */}
         <Route path='/pets/new'>
           <NewPetForm newPetInput={newPetInput} 
                       setNewPet={setNewPet}  
@@ -58,6 +58,7 @@ function App() {
           />
         </Route>
         <Route path='/pets/mine' component={MyPets} />
+        <Route path='/pets/:id' component={PetDetails} />
         <Route path='/pets'>
           <PetList pets={SearchPetArray} 
           />

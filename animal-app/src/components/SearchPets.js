@@ -1,4 +1,4 @@
-function SearchPets() {
+function SearchPets({ handleSearch }) {
 
     return (
         <div className='searchbar'> 
@@ -7,7 +7,7 @@ function SearchPets() {
                 type="text"
                 id="search"
                 placeholder="Search Pets"
-                onChange={(e) => console.log("Searching...")}
+                onChange={(e) => handleSearch(e)}
             />
         </div>
     )

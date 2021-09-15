@@ -31,8 +31,9 @@ function PetDetails() {
                 <li>{`${size} - ${animal}`}</li>
             </ul>
             <p>{description}</p>
-            <Link onClick={() => history.push('/pets')}>Go To All Pets</Link>
-            {/* button or link that goes back to entire list needed */}
+            <button>
+                <Link to={'/pets'} onClick={() => history.push('/pets')}>Go To All Pets</Link>
+            </button>
         </div>
     )
 };

@@ -18,8 +18,8 @@ function PetCard({ petObj }) {
             <h3>{name}</h3>
             <p>Type of Animal: {animal}</p>
             <p>Sex: {sex}</p>
-            {/* button needs to link to individial client-side route */}<button>
-                <Link to={`/pets/${id}`}>Details</Link>
+            <button>
+                <Link to={`/pets/${id}`}>Learn More</Link>
             </button>
             <button onClick={() => handleAddPet(petObj)}>Add To MyPets</button>
         </div>
