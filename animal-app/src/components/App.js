@@ -49,19 +49,15 @@ function App() {
       <Header searchPet={searchPet} 
               handleSearch={handleSearch} 
       />
+      <NewPetForm newPetInput={newPetInput} 
+              setNewPet={setNewPet}  
+              handleSubmit={handleSubmit} 
+      />
       <Switch>
-        {/* <Route path='/pets/:id' component={PetDetails} /> */}
-        <Route path='/pets/new'>
-          <NewPetForm newPetInput={newPetInput} 
-                      setNewPet={setNewPet}  
-                      handleSubmit={handleSubmit} 
-          />
-        </Route>
         <Route path='/pets/mine' component={MyPets} />
         <Route path='/pets/:id' component={PetDetails} />
-        <Route path='/pets'>
-          <PetList pets={SearchPetArray} 
-          />
+        <Route path='/'>
+          <PetList pets={SearchPetArray}/>
         </Route>
       </Switch>
     </div>

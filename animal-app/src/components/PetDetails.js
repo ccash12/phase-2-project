@@ -26,9 +26,9 @@ function PetDetails() {
             <img src={image} alt={name} />
             <h1>{name}</h1>
             <ul className='petDetailList'>
-                <li>{age}</li>
-                <li>{sex}</li>
-                <li>{`${size} - ${animal}`}</li>
+                <li>{age} year(s) old</li>
+                <li>{name} is a {sex}!</li>
+                <li>{`${size} ${animal}`}</li>
             </ul>
             <p>{description}</p>
             <button>

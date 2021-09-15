@@ -1,13 +1,3 @@
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 .logo {
   display: block;
   margin-left: auto;
@@ -19,9 +9,37 @@
   background-image: url(https://cdn5.vectorstock.com/i/1000x1000/29/14/paws-background-paw-blue-pattern-vector-21602914.jpg)
 }
 
+.static {
+  text-align: center;
+  font-family:monospace;
+  overflow: auto;
+  /* display: inline-flex; */
+}
+
+.home {
+  text-align: center;
+  vertical-align: center;
+  background-color: rgb(157, 157, 157);
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 25px;
+  width: 170px;
+  height: 50px;
+
+}
+
+.links {
+  text-align: center;
+  vertical-align: center;
+  line-height: 50px;
+  color: white;
+  text-decoration: none;
+}
+
 .header {
     color: black;
     text-align: center;
+    text-shadow: 2px 2px rgb(157, 157, 157);    
     font-size: 50pt;
     font-family:monospace;
     border-bottom: 1px solid #aaa;

@@ -5,7 +5,7 @@ function PetCard({ petObj }) {
     const {name, image, sex, animal, id} = petObj;
 
     function handleAddPet(petObj) {
-        fetch(`http://localhost:8000/mypets`, {
+        fetch(`http://localhost:3000/mypets`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(petObj)
