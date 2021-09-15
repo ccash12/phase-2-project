@@ -8,6 +8,37 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+
+.app {
+  background-image: url(https://www.publicdomainpictures.net/pictures/40000/velka/paw-prints-background.jpg);
+}
+
+.header {
+    color: white;
+    background: blue;
+    text-align: center;
+    font-size: 50pt;
+    font-family:monospace;
+    border-bottom: 1px solid #aaa;
+    margin:0; padding:0;
+}
+
+.searchbar {
+  position: absolute;
+  top: 355px;
+  left: 575px;
+  width: 1000px;
+}
+
+.form-box {
+    
+}
 
 /* .petcard {
   background: #FFB300;

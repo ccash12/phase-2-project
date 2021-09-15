@@ -41,8 +41,9 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="app">
       <Header />
+      
       <NewPetForm newPetInput={newPetInput} 
                   setNewPet={setNewPet} 
                   handleChange={handleChange} 

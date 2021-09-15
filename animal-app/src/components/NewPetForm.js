@@ -2,7 +2,7 @@ function NewPetForm({ newPetInput, setNewPet, handleChange, handleSubmit }) {
     const {name, age, animal, image, description} = newPetInput;
 
     return (
-        <div id='newAnimalForm'>
+        <div class="form-box" id='newAnimalForm'>
                {/* form needs onSubmit, inputs need onChange */}
             <form onSubmit={e => handleSubmit(e)}>
               <input type='text'

@@ -1,8 +1,9 @@
 function SearchPets() {
+
     return (
         <div className='searchbar'> 
             <label htmlFor="search">Search Pets:</label>
-            <input 
+            <input className='inputsearch'
                 type="text"
                 id="search"
                 placeholder="Search Pets"
