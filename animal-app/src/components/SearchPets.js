@@ -1,4 +1,5 @@
 function SearchPets() {
+
     return (
         <div className='searchbar'> 
             <label htmlFor="search">Search Pet Type:</label>

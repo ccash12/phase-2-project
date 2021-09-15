@@ -12,13 +12,8 @@ import PetDetails from './PetDetails';
 function App() {
   const [pets, setPets] = useState([]);
   const [searchPet, setSearchPet] = useState('');
-  const [newPetInput, setNewPet] = useState({name: '', 
-                                             age: '', 
-                                             animal: '', 
-                                             image: '', 
-                                             size: '', 
-                                             sex: '', 
-                                             description: '' });
+  const [newPetInput, setNewPet] = useState(
+    {name: '', age: '', animal: '', image: '', size: '', sex: '', description: '' });
   
 
   useEffect(() => {
@@ -50,7 +45,7 @@ function App() {
   });
 
   return (
-    <div className="App">
+    <div className="app">
       <Header searchPet={searchPet} 
               handleSearch={handleSearch} 
       />

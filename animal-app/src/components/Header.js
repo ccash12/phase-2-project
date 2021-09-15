@@ -1,18 +1,14 @@
 import SearchPets from "./SearchPets";
+// import Logo from "../logo.png"
 
 function Header({ searchPet, handleSearch }) {
     return (
         <div>
-            <h1 
-            style={{color: "white", 
-            fontFamily: "monospace",
-            backgroundColor: "turquoise",
-            fontSize:"65px",
-            display: "flex",
-            justifyContent: "center"
-            }}>Pet Adoption</h1>
-        
+            <h1 class="header">Pet Adoption</h1>
             <SearchPets searchPet={searchPet} handleSearch={handleSearch} />
+            {/* <img class="logo" src={Logo} alt="logo"/> */}
+            
+            
         </div>
     )
 }

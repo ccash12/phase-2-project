@@ -1,3 +1,63 @@
+<<<<<<< HEAD
+=======
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+
+.app {
+  background-image: url(https://cdn5.vectorstock.com/i/1000x1000/29/14/paws-background-paw-blue-pattern-vector-21602914.jpg)
+}
+
+.header {
+    color: black;
+    text-align: center;
+    font-size: 50pt;
+    font-family:monospace;
+    border-bottom: 1px solid #aaa;
+    margin:0; padding:0;
+}
+
+.searchbar {
+  top: 355px;
+  left: 575px;
+  width: 2000px;
+  font-size: 20pt;
+}
+
+.form-box{
+  padding: 2rem 1rem;
+  margin: 2rem 0;
+  background-color: rgb(97, 205, 238);
+}
+
+.form-box {
+  display: flex;
+  justify-content: center;
+}
+
+.form-box {
+  margin-right: 2rem;
+  flex: 1;
+}
+
+.form-box {
+  width: 150px;
+}
+
+>>>>>>> d6a3f8310448f71c0b9a062ac835376698e491b9
 .petcard {
   background: #FFB300;
   width: 240px;
@@ -14,4 +74,18 @@
   height: auto;
 }
 
+input {
+  padding: 0.25rem;
+  border: none;
+  font-family: inherit;
+  font-size: 1.2em;
+  border-bottom: 2px solid gray;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 2px solid var(--green);
+}
 
