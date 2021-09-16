@@ -1,19 +1,12 @@
 import PetCard from "./PetCard";
+import AddButton from "./AddButton";
 
 function PetList({ pets }) {
 
     const petListContents =  pets.map(pet => 
         <PetCard key={pet.id} petObj={pet} >
-            <button onClick={() => handleAddPet(pet)}>Add To My Pets</button>
+            <AddButton pet={pet} />
         </PetCard>);
-
-    function handleAddPet(petObj) {
-        fetch(`http://localhost:3000/mypets`, {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(petObj)
-        });
-    };
 
     return (
         <div >

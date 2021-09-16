@@ -1,6 +1,6 @@
-body {
+/* body {
   background-color: rgb(97, 205, 238);
-}
+} */
 
 .static {
   text-align: center;
@@ -41,6 +41,11 @@ body {
   width: 170px;
   height: 50px;
 
+}
+
+.home:hover {
+  background-color:rgb(251, 188, 79);
+  box-shadow: 5px 3px 3px rgb(55, 55, 55);
 }
 
 .links {
@@ -104,17 +109,35 @@ body {
   font-family:monospace;
 }
 
-.petcard button, .submitButton {
+.petcard button, 
+.submitButton {
   color: rgb(24, 24, 24);
   background-color: white;
   border-radius: 10px;
   font-family:monospace;
+  /* box-shadow: 1px 2px rgb(104, 104, 104); */
+}
+
+.petcard button:hover, 
+.submitButton:hover {
+  background-color: rgb(251, 188, 79);
   box-shadow: 1px 2px rgb(104, 104, 104);
 }
 
-/* .petcardDetails {
+.petcardDetails {
+  background: rgb(254, 234, 205);
+  box-shadow: 5px 3px 3px rgb(55, 55, 55);
+  padding: 20px;
+  object-fit: contain;
+  font-family:monospace;
+  border-radius: 30px;
+}
 
-} */
+.petcardDetails img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+}
 
 input {
   padding: 0.25rem;
