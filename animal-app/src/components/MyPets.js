@@ -3,6 +3,10 @@ import PetCard from "./PetCard";
 
 function MyPets() {
     const [myPets, setMyPets] = useState([]);
+    const myPetsList = myPets.map(myPet => 
+        <PetCard petObj={myPet} key={myPet.id}>
+            <button onClick={() => handleAddPet(myPet)}>Remove From My Pets</button>
+        </PetCard>);
 
     useEffect(() => {
         fetch(`http://localhost:3000/mypets`)
@@ -10,7 +14,11 @@ function MyPets() {
         .then(myPetsArray => setMyPets(myPetsArray))
     },[]);
 
-    const myPetsList = myPets.map(myPet => <PetCard petObj={myPet} key={myPet.id} />)
+    function handleAddPet(petObj) {
+        fetch(`http://localhost:3000/mypets/${petObj.id}`, {
+            method: 'DELETE'})
+        .then(setMyPets(myPets.filter(myPet => myPet.id !== petObj.id)))
+    };
 
     return (
         <div>
