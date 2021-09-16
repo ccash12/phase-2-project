@@ -18,37 +18,38 @@ function NewPetForm({ newPetInput, setNewPet, handleSubmit }) {
 
     return (
         <div className="form-box" id='newAnimalForm'>
+               <h3>Add New Pet:</h3>
             <form onSubmit={e => handleSubmit(e)}>
               <input type='text'
                      placeholder='Name'
                      id='name'
                      name='name'
                      value={name}
-                     onChange={e => setNewPet({...newPetInput, [e.target.name]: e.target.value})} /> <br />
+                     onChange={e => setNewPet({...newPetInput, [e.target.name]: e.target.value})} /> <br /><br />
               <input type='text'
                      placeholder='Animal Type'
                      id='animalType'
                      name='animal'
                      value={animal}
-                     onChange={e => setNewPet({...newPetInput, [e.target.name]: e.target.value})} /><br />
+                     onChange={e => setNewPet({...newPetInput, [e.target.name]: e.target.value})} /><br /><br />
               <input type='text'
                      placeholder='Age Estimate'
                      id='age'
                      name='age'
                      value={age}
-                     onChange={e => setNewPet({...newPetInput, [e.target.name]: e.target.value})} /><br />
+                     onChange={e => setNewPet({...newPetInput, [e.target.name]: e.target.value})} /><br /><br />
               <input type='text'
                      placeholder='Image'
                      id='image'
                      name='image'
                      value={image}
-                     onChange={e => setNewPet({...newPetInput, [e.target.name]: e.target.value})} /><br />
+                     onChange={e => setNewPet({...newPetInput, [e.target.name]: e.target.value})} /><br /><br />
               <input type='text'
                      placeholder='Description'
                      id='description'
                      name='description' 
                      value={description}
-                     onChange={e => setNewPet({...newPetInput, [e.target.name]: e.target.value})} /><br />
+                     onChange={e => setNewPet({...newPetInput, [e.target.name]: e.target.value})} /><br /><br />
               <div id='size'> Size: <br />
                      <input checked={sizeChecked === 'small'} 
                             type="checkbox" 
@@ -92,7 +93,7 @@ function NewPetForm({ newPetInput, setNewPet, handleSubmit }) {
                      />
                      <label htmlFor="female"> Female</label><br />
               </div>
-              <button>Submit</button>
+              <button className='submitButton'>Submit</button>
             </form>
         </div>
     );

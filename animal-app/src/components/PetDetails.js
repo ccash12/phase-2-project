@@ -22,7 +22,7 @@ function PetDetails() {
     const {age, sex, size, image, animal, name, description} = pet;
 
     return (
-        <div>
+        <div className='petcardDetails'>
             <img src={image} alt={name} />
             <h1>{name}</h1>
             <ul className='petDetailList'>

@@ -7,12 +7,14 @@ function PetCard({ petObj, children }) {
     return (
         <div id={id} className='petcard'>
             <img src={image} alt={name} />
-            <h3>{name}</h3>
+            <h2>{name}</h2>
             <p>Type of Animal: {animal}</p>
             <p>Sex: {sex}</p>
             <button>
-                <Link to={`/pets/${id}`}>Learn More</Link>
+                <Link className='cardLinks' to={`/pets/${id}`}>Learn More</Link>
             </button>
+            <br />
+            <br />
             {children}
         </div>
     )

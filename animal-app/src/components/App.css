@@ -1,3 +1,7 @@
+body {
+  background-color: rgb(97, 205, 238);
+}
+
 .static {
   text-align: center;
   font-family:monospace;
@@ -59,11 +63,13 @@
 }
 
 .form-box {
+  font-family:monospace;
   padding: 20px;
   margin: 1rem 0;
-  background-color: rgb(97, 205, 238);
+  margin-left: 25px;
+  background-color: rgb(157, 157, 157);
   width: 235px;
-  height: 400px;
+  height: auto;
 }
 
 /* .petListContainer {
@@ -74,13 +80,16 @@
 } */
 
 .petcard {
-  background: #FFB300;
+  background: rgb(254, 234, 205);
+  box-shadow: 5px 3px 3px rgb(55, 55, 55);
   width: 240px;
   padding: 20px;
   margin: 10px;
   float:left;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   object-fit: contain;
+  font-family:monospace;
+  border-radius: 30px;
 }
 
 .petcard img {
@@ -88,6 +97,24 @@
   height: 200px;
   object-fit: cover;
 }
+
+.cardLinks {
+  text-decoration: none;
+  color: rgb(19, 19, 19);
+  font-family:monospace;
+}
+
+.petcard button, .submitButton {
+  color: rgb(24, 24, 24);
+  background-color: white;
+  border-radius: 10px;
+  font-family:monospace;
+  box-shadow: 1px 2px rgb(104, 104, 104);
+}
+
+/* .petcardDetails {
+
+} */
 
 input {
   padding: 0.25rem;
