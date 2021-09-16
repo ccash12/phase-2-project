@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function PetCard({ petObj }) {
+function PetCard({ petObj, children }) {
     const {name, image, sex, animal, id} = petObj;
 
     function handleAddPet(petObj) {
@@ -11,7 +11,7 @@ function PetCard({ petObj }) {
             body: JSON.stringify(petObj)
         });
     };
-
+    
     return (
         <div id={id} className='petcard'>
             <img src={image} alt={name} />
@@ -21,6 +21,7 @@ function PetCard({ petObj }) {
             <button>
                 <Link to={`/pets/${id}`}>Learn More</Link>
             </button>
+            {children}
             <button onClick={() => handleAddPet(petObj)}>Add To MyPets</button>
         </div>
     )

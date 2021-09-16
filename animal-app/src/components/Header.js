@@ -8,7 +8,9 @@ function Header({ searchPet, handleSearch }) {
 
     return (
         <div className='static'>
+            <img src='https://www.jfphonline.com/storage/app/media/hp-animals.png' alt='pet-group' />
             <h1 className="header">Pet Adoption</h1>
+            {/* <img src='https://www.jfphonline.com/storage/app/media/hp-animals.png' alt='pet-group' /> */}
             <div className='home'>
                 <h2>
                     <Link className='links' to='/' onClick={() => history.push('/')}>All Pets</Link>

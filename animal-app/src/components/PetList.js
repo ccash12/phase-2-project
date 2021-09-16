@@ -1,12 +1,14 @@
 import PetCard from "./PetCard";
 
 function PetList({ pets }) {
- const petListContents =  pets.map(pet => <PetCard key={pet.id} petObj={pet} />);
+ const petListContents =  pets.map(pet => <PetCard key={pet.id} petObj={pet} ><button>hi</button></PetCard>);
 
     return (
-        <ul>
-            {petListContents}
-        </ul>
+        <div className='petListContainer'>
+            <section>
+                {petListContents}
+            </section>
+        </div>
     )
 }
 

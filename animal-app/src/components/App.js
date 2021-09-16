@@ -32,6 +32,7 @@ function App() {
     .then(resp => resp.json())
     .then(setPets([...pets, newPetInput]))
     console.log(newPetInput)
+    setNewPet({name: '', age: '', animal: '', image: '', size: '', sex: '', description: '' });
   };
 
   function handleSearch(e) {
@@ -49,17 +50,19 @@ function App() {
       <Header searchPet={searchPet} 
               handleSearch={handleSearch} 
       />
-      <NewPetForm newPetInput={newPetInput} 
-              setNewPet={setNewPet}  
-              handleSubmit={handleSubmit} 
-      />
-      <Switch>
-        <Route path='/pets/mine' component={MyPets} />
-        <Route path='/pets/:id' component={PetDetails} />
-        <Route path='/'>
-          <PetList pets={SearchPetArray}/>
-        </Route>
-      </Switch>
+      <div className='bodyContent'>
+        <NewPetForm newPetInput={newPetInput} 
+                setNewPet={setNewPet}  
+                handleSubmit={handleSubmit} 
+        />
+        <Switch>
+          <Route path='/pets/mine' component={MyPets} />
+          <Route path='/pets/:id' component={PetDetails} />
+          <Route path='/'>
+            <PetList pets={SearchPetArray}/>
+          </Route>
+        </Switch>
+      </div>
     </div>
   );
 }
