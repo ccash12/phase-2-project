@@ -72,6 +72,7 @@
   padding: 20px;
   margin: 1rem 0;
   margin-left: 25px;
+  margin-right: 75px;
   background-color: rgb(157, 157, 157);
   width: 235px;
   height: auto;
@@ -110,7 +111,8 @@
 }
 
 .petcard button, 
-.submitButton {
+.submitButton,
+.petcardDetails button {
   color: rgb(24, 24, 24);
   background-color: white;
   border-radius: 10px;
@@ -119,7 +121,8 @@
 }
 
 .petcard button:hover, 
-.submitButton:hover {
+.submitButton:hover,
+.petcardDetails button:hover {
   background-color: rgb(251, 188, 79);
   box-shadow: 1px 2px rgb(104, 104, 104);
 }

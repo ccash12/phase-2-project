@@ -29,13 +29,13 @@ function PetDetails() {
             <h1>{`${name} is...`}</h1>
             <ul className='petDetailList'>
                 <li>{age} year(s) old</li>
-                <li>{name} is a {sex}!</li>
-                <li>{`${size}-sized ${animal}`}</li>
+                <li> a {sex}!</li>
+                <li>{`a ${size}-sized ${animal}`}</li>
             </ul>
             <p>{description}</p>
             <button>
-                <Link to={'/pets'} onClick={() => history.push('/pets')}>Go To All Pets</Link>
-            </button>
+                <Link className='cardLinks' to='/pets' onClick={() => history.goBack()}>Go Back</Link>
+            </button> <br /><br />
             <AddButton pet={pet} />
         </div>
     )

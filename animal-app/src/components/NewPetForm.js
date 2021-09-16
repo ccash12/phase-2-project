@@ -19,7 +19,9 @@ function NewPetForm({ newPetInput, setNewPet, handleSubmit }) {
     return (
         <div className="form-box" id='newAnimalForm'>
                <h3>Add New Pet:</h3>
-            <form onSubmit={e => handleSubmit(e)}>
+            <form onSubmit={e => {handleSubmit(e)
+                                  setSizeChecked(false)
+                                  setSexChecked(false)}}>
               <input type='text'
                      placeholder='Name'
                      id='name'
