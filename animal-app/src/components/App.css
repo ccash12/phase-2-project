@@ -25,7 +25,6 @@
   font-family:monospace;
   position: relative;
   left: -150px;
-  /* border-bottom: 1px solid #aaa; */
   margin:0; 
   padding:0;
   vertical-align: center;
@@ -56,7 +55,7 @@
   text-decoration: none;
 }
 
-.searchbar {
+#searchbar {
   top: 355px;
   left: 575px;
   width: auto;
@@ -73,17 +72,39 @@
   margin: 1rem 0;
   margin-left: 25px;
   margin-right: 75px;
-  background-color: rgb(157, 157, 157);
-  width: 235px;
-  height: auto;
+  background-color: rgb(97, 205, 238);
+  width: 400px;
+  height: 500px;
+  border-radius: 25px;
 }
 
-/* .petListContainer {
-  margin-left: 0px;
-  border: 2px solid black;
-  max-width: fit-content;
-  max-height: fit-content;
-} */
+.form-box:hover {
+  border-color: rgb(7, 138, 177);
+  box-shadow: 0 0 15px rgb(7, 138, 177);
+}
+
+.form-box button {
+  float: right;
+}
+
+#size,
+#sex {
+  font-size: 20px;
+  margin-left: 10px;
+  margin-right: 0px;
+} 
+
+.petdiv {
+  width: 70%;
+}
+
+.petdiv #title {
+  text-align: left;
+  color: rgb(251, 188, 79);
+  text-shadow: 2px 2px rgb(254, 234, 205);    
+  font-size: 35pt;
+  font-family:monospace;
+}
 
 .petcard {
   background: rgb(254, 234, 205);
@@ -92,10 +113,14 @@
   padding: 20px;
   margin: 10px;
   float:left;
-  /* border: 2px solid black; */
   object-fit: contain;
   font-family:monospace;
   border-radius: 30px;
+}
+
+.petcard:hover {
+  border-color: rgb(220, 184, 130);
+  box-shadow: 0 0 15px rgb(220, 184, 130);
 }
 
 .petcard img {
@@ -127,22 +152,49 @@
   box-shadow: 1px 2px rgb(104, 104, 104);
 }
 
+#takehome:hover {
+  color: rgb(104, 104, 104);
+  background-color: springgreen;
+}
+
+.petdivdetails {
+  width: 60%;
+}
+
 .petcardDetails {
   background: rgb(254, 234, 205);
   box-shadow: 5px 3px 3px rgb(55, 55, 55);
-  padding: 20px;
+  padding: 40px;
   object-fit: contain;
   font-family:monospace;
   border-radius: 30px;
+  margin-top: 1em;
+  height: 500px;
 }
 
 .petcardDetails img {
-  width: 100%;
-  height: 550px;
+  width: 50%;
+  height: 100%;
   object-fit: cover;
+  float: right;
 }
 
-input {
+.petcardDetails h1 {
+  font-size: 60px;
+}
+
+.petcardDetails li {
+  font-size: 22px;
+}
+
+.petcardDetails p {
+  font-size: 20px;
+  text-align: center;
+  font-style: italic;
+}
+
+.text,
+.searchbar {
   padding: 0.25rem;
   border: none;
   font-family: inherit;

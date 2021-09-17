@@ -23,30 +23,35 @@ function NewPetForm({ newPetInput, setNewPet, handleSubmit }) {
                                   setSizeChecked(false)
                                   setSexChecked(false)}}>
               <input type='text'
+                     className='text'
                      placeholder='Name'
                      id='name'
                      name='name'
                      value={name}
                      onChange={e => setNewPet({...newPetInput, [e.target.name]: e.target.value})} /> <br /><br />
               <input type='text'
+                     className='text'
                      placeholder='Animal Type'
                      id='animalType'
                      name='animal'
                      value={animal}
                      onChange={e => setNewPet({...newPetInput, [e.target.name]: e.target.value})} /><br /><br />
               <input type='text'
+                     className='text'
                      placeholder='Age Estimate'
                      id='age'
                      name='age'
                      value={age}
                      onChange={e => setNewPet({...newPetInput, [e.target.name]: e.target.value})} /><br /><br />
               <input type='text'
+                     className='text'
                      placeholder='Image'
                      id='image'
                      name='image'
                      value={image}
                      onChange={e => setNewPet({...newPetInput, [e.target.name]: e.target.value})} /><br /><br />
               <input type='text'
+                     className='text'
                      placeholder='Description'
                      id='description'
                      name='description' 
@@ -77,7 +82,7 @@ function NewPetForm({ newPetInput, setNewPet, handleSubmit }) {
                             onChange={(e) => handleChecksSize(e)}
                      />
                      <label htmlFor="large"> Large</label>
-              </div>
+              </div><br />
               <div id='sex'> Sex: <br />
                      <input checked={sexChecked === 'male'} 
                             type="checkbox" id="male" 
@@ -95,7 +100,7 @@ function NewPetForm({ newPetInput, setNewPet, handleSubmit }) {
                      />
                      <label htmlFor="female"> Female</label><br />
               </div>
-              <button className='submitButton'>Submit</button>
+              <button className='submitButton'>Submit New Pet!</button>
             </form>
         </div>
     );

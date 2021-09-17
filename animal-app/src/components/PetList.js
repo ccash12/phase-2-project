@@ -9,7 +9,7 @@ function PetList({ pets }) {
         </PetCard>);
 
     return (
-        <div >
+        <div className='petdiv'>
             {petListContents}
         </div>
     )

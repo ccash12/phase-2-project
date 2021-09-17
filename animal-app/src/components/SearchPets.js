@@ -1,10 +1,10 @@
 function SearchPets({ handleSearch }) {
 
     return (
-        <div className='searchbar'> 
-            {/* <label htmlFor="search">Search Pet Type:</label> */}
+        <div id='searchbar'> 
             <input 
                 type="text"
+                className='searchbar'
                 id="search"
                 placeholder="Search Pets"
                 onChange={(e) => handleSearch(e)}

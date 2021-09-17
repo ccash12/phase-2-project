@@ -30,7 +30,7 @@ function App() {
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(newPetInput)})
     .then(resp => resp.json())
-    .then(setPets([...pets, newPetInput]))
+    .then(newPet => setPets([...pets, newPet]))
     console.log(newPetInput)
     setNewPet({name: '', age: '', animal: '', image: '', size: '', sex: '', description: '' });
   };

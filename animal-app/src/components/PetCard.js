@@ -6,7 +6,7 @@ function PetCard({ petObj, children }) {
 
     return (
         <div id={id} className='petcard'>
-            <img src={image} alt={name} />
+            <img src={image} alt={name} className='takeme' />
             <h2>{name}</h2>
             <p>Type of Animal: {animal}</p>
             <p>Sex: {sex}</p>

@@ -5,7 +5,8 @@ function MyPets() {
     const [myPets, setMyPets] = useState([]);
     const myPetsList = myPets.map(myPet => 
         <PetCard petObj={myPet} key={myPet.id}>
-            <button onClick={() => handleRemovePet(myPet)}>Remove From My Pets</button>
+            <button onClick={() => handleRemovePet(myPet)}>Remove From My Pets</button><br /><br />
+            <button id='takehome'>Take Me Home!</button>
         </PetCard>);
 
     useEffect(() => {
@@ -21,7 +22,8 @@ function MyPets() {
     };
 
     return (
-        <div>
+        <div className='petdiv'>
+            <h2 id='title'>My Pets ʕ•́ᴥ•̀ʔっ</h2>
             {myPetsList}
         </div>
     );

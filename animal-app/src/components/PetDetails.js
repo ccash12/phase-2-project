@@ -9,6 +9,7 @@ function PetDetails() {
 
     const id = useParams().id;
     let history = useHistory();
+    console.log(id);
 
     useEffect(() => {
         fetch(`http://localhost:3000/pets/${id}`)
@@ -24,19 +25,21 @@ function PetDetails() {
     const {age, sex, size, image, animal, name, description} = pet;
 
     return (
-        <div className='petcardDetails'>
-            <img src={image} alt={name} />
-            <h1>{`${name} is...`}</h1>
-            <ul className='petDetailList'>
-                <li>{age} year(s) old</li>
-                <li> a {sex}!</li>
-                <li>{`a ${size}-sized ${animal}`}</li>
-            </ul>
-            <p>{description}</p>
-            <button>
-                <Link className='cardLinks' to='/pets' onClick={() => history.goBack()}>Go Back</Link>
-            </button> <br /><br />
-            <AddButton pet={pet} />
+        <div className='petdivdetails'>
+            <div className='petcardDetails'>
+                <img src={image} alt={name} />
+                <h1>{`${name} is...`}</h1>
+                <ul className='petDetailList'>
+                    <li>{age} year(s) old</li>
+                    <li> a {sex}!</li>
+                    <li>{`a ${size}-sized ${animal}`}</li>
+                </ul><br /> <br />
+                <p>{description}</p><br /><br /><br /><br /><br />
+                <button>
+                    <Link className='cardLinks' to='/pets' onClick={() => history.goBack()}>Go Back</Link>
+                </button> <br /><br />
+                <AddButton pet={pet} />
+            </div>
         </div>
     )
 };
